@@ -22,7 +22,7 @@ const histogram = new client.Histogram({
 
 // create the express application
 const app = express();
-const port = process.argv[2] || 8080;
+const port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
